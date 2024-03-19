@@ -1,0 +1,133 @@
+:root {
+    --border-color: #ccc;
+    /* --background-color: #06A3DA; */
+    /* --background-color:#34AD54;  */
+    --background-color: #2299dd; 
+    --background-color-two: #fff;
+    --text-color: #fff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 770px;
+    padding: 35px;
+    background: var(--background-color-two);
+    border-radius: 10px;
+}
+
+.container .content-box {
+    padding: 13px 20px 0;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.content-box .typing-text {
+    max-height: 255px;
+    overflow-y: auto;
+}
+
+.typing-text::-webkit-scrollbar {
+    width: 0px;
+}
+
+.typing-text p {
+    font-size: 21px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+.content-box .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.content button {
+    border: none;
+    outline: none;
+    width: 100px;
+    padding: 8px 0;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    transition: transform 0.3 ease;
+}
+
+.content button:active {
+    transform: scale(0.97);
+}
+
+.content .result-details {
+    width: calc(100% - 140px);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+
+
+}
+
+.result-details li {
+    height: 22px;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.result-details li:not(:first-child) {
+    padding-left: 22px;
+    border-left: 1px solid var(--border-color);
+}
+
+.result-details li p {
+    font-size: 19px;
+}
+
+.result-details li span {
+    display: block;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.result-details li:not(:first-child) span {
+    font-weight: 500;
+}
+
+.result-details li span b {
+    font-weight: 500;
+}
+
+@media (max-width: 780px) {
+    .container {
+        width: 95vw;
+        padding: 5px;
+    }
+
+    .result-details li   {
+        padding-left: 22px;
+        border: none !important;
+        margin-bottom: 5px;
+    }
+}
