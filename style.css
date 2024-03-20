@@ -53,6 +53,43 @@ body {
     word-break: break-all;
 }
 
+.typing-text p span {
+    position: relative;
+}
+
+.typing-text p span.correcte{
+    color: #34AD54;
+}
+
+.typing-text p span.incorrecte{
+    color: #dc3545;
+    background: rgba(220, 53, 70, 0.2);
+    outline: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.typing-text p span.active{
+    color: var(--background-color);
+}
+
+.typing-text p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--background-color);
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+
 .content-box .content {
     display: flex;
     align-items: center;
